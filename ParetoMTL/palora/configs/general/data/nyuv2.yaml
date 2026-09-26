@@ -1,0 +1,6 @@
+dataset: nyuv2
+
+num_tasks: 3
+batch_size: 2
+num_workers: 10
+apply_augmentation: true

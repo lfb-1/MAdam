@@ -1,0 +1,11 @@
+.DS_Store
+.pi-subagents/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/.mypy_cache/
+ParetoMTL/palora/reports/*.csv
+ParetoMTL/palora/reports/**/*.csv
+reports/*.csv
+reports/**/*.csv
+*.codex

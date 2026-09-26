@@ -1,0 +1,36 @@
+# @package _global_
+comment: cityscapes config
+defaults:
+- _self_
+- hydra_cfg
+- /data: cityscapes
+- wandb: wandb
+- /method: palora
+- ray_sampler: fixed
+
+resume_from: ls
+adjust_num_epochs: false
+
+
+
+model:
+  type: segnet
+
+optimizer:
+  type: Adam
+  # put the learning rate equal to the one after the optimizer step in the original setup.
+  lr: 5E-5
+scheduler:
+  step: 75
+  gamma: 0.5
+training:
+  epochs: 5
+
+validate_every_n: 1
+seed: 10
+device: 0
+hydra:
+  searchpath:
+  - file://configs/general
+  run:
+    dir: ./logs/outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}

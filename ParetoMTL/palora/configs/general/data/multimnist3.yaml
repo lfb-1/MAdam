@@ -1,0 +1,5 @@
+dataset: multimnistThree
+_target_: src.datasets.multimnist3digits.MultiMnistThreeDataModule
+batch_size: 256
+num_workers: 2
+valid_batch_size: 512

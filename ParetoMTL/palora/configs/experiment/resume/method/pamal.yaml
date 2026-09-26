@@ -1,0 +1,21 @@
+name: pamal
+
+# number of interpolation points in the line between two ensemble members
+validate_models: 11
+
+# each ensemble member is initialized independently
+reinit_flag: true
+
+# multi-forward hyperparameters
+num: 3 # referred to as window in the paper
+reg_coefficient: 1
+
+# loss and gradient balancing
+# ls: no balancing scheme
+# rwa: loss balancing
+# gradnorm: gradient balancing
+# full: loss AND gradient balancing (not discussed in the paper)
+inner_method: gradnorm
+
+# concentration parameter for Dirichlet distribution
+p: 7

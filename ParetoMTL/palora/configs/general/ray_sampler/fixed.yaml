@@ -1,0 +1,4 @@
+name: fixed_deterministic
+_target_: src.callbacks.methods.utils.samplers.FixedSampler
+mul: 5
+epsilon: 0.01

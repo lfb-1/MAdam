@@ -1,0 +1,9 @@
+name: cagrad
+fim_method: none
+fim_ema_decay: 0.999
+fim_eps_damp: 1.0e-6
+fim_eps_num: 1.0e-12
+fim_stochastic_pairs: true
+fim_bias_correction: false
+fim_clip_grad_norm: 0.0
+exclude_bn_from_fim: null

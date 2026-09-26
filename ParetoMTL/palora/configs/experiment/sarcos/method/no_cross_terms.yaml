@@ -1,0 +1,16 @@
+name: ls
+
+# Full MAdam without cross-task Fisher terms.
+task_weights: null
+
+fim_method: diag_madam
+fim_ablation_name: no_cross_terms
+fim_eps_damp: 1e-8
+fim_eps_num: 1e-12
+fim_ema_decay: 0.999
+fim_clip_grad_norm: 0.0
+fim_bias_correction: false
+fim_stochastic_pairs: true
+fim_start_fraction: 0.0
+fim_end_fraction: 1.0
+exclude_bn_from_fim: null

@@ -1,0 +1,25 @@
+# @package _global_
+comment: celeba config
+defaults:
+- _self_
+- hydra_cfg
+- data: celeba
+- method: palora
+- wandb: wandb
+- ray_sampler: annealing_dirichlet
+
+
+optimizer:
+  type: Adam
+  lr: 0.001
+training:
+  epochs: 100
+
+use_amp: False
+
+validate_every_n: 1
+seed: 0
+device: 0
+hydra:
+  searchpath:
+  - file://configs/general

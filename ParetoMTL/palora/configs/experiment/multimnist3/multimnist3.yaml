@@ -1,0 +1,29 @@
+# @package _global_
+comment: multimnist3 config
+defaults:
+- _self_
+- hydra_cfg
+- /data: multimnist3
+- method: palora
+- wandb: wandb
+- ray_sampler: annealing_dirichlet
+
+model:
+  encoder: MultiLeNetR
+  decoder: MultiLeNetO
+
+optimizer:
+  _target_: torch.optim.Adam
+  name: Adam
+  lr: 0.001
+training:
+  epochs: 20
+
+
+
+validate_every_n: 10
+seed: 0
+device: 0
+hydra:
+  searchpath:
+  - file://configs/general

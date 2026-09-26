@@ -1,0 +1,32 @@
+# @package _global_
+comment: utkface config
+defaults:
+- _self_
+- hydra_cfg
+- /data: utkface
+- method: palora
+- wandb: wandb
+- ray_sampler: annealing_dirichlet
+
+
+optimizer:
+  type: Adam
+  lr: 0.001
+training:
+  epochs: 100
+
+validate_every_n: 20
+label_smoothing: 0.0
+fim_label_smoothing: 0.0
+adaptive_label_smoothing: 0.0
+entropy_reg: 0.0
+elr_lambda: 0.0
+elr_beta: 0.7
+seed: 0
+device: 0
+hydra:
+  searchpath:
+  - file://configs/general
+  run:
+    dir: ./logs/outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+fim_temperature: 1.0

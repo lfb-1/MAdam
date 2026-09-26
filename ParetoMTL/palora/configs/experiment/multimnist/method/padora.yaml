@@ -1,0 +1,27 @@
+name: padora
+
+# number of interpolation points in the line between two ensemble members
+validate_models: 11
+
+# multi-forward hyperparameters
+num: 1 # referred to as window in the paper
+reg_coefficient: 0
+
+# loss and gradient balancing
+# ls: no balancing scheme
+# rwa: loss balancing
+# gradnorm: gradient balancing
+# full: loss AND gradient balancing (not discussed in the paper)
+inner_method: ls
+
+# concentration parameter for Dirichlet distribution
+p: 1
+
+# LoRA rank
+rank: 1
+reweight_lr: true
+lora_alpha: ${method.rank}
+
+
+peft: lora
+lora_alpha_multiplier:  

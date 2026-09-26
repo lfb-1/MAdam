@@ -1,0 +1,8 @@
+hydra:
+  run:
+    dir: ./logs/${data.dataset}/${method.name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ./logs/multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}
+  job:
+    chdir: true

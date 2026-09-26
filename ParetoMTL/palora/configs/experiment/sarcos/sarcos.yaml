@@ -1,0 +1,27 @@
+# @package _global_
+comment: census config
+defaults:
+- _self_
+- hydra_cfg
+- /data: sarcos
+- method: palora
+- wandb: wandb
+- ray_sampler: annealing_dirichlet
+
+model:
+  type: mlp
+  encoder_specs: [256, 256, 256]
+  decoder_specs: [1]
+
+optimizer:
+  type: Adam
+  lr: 1e-4
+training:
+  epochs: 100
+
+validate_every_n: 10
+seed: 0
+device: 0
+hydra:
+  searchpath:
+  - file://configs/general

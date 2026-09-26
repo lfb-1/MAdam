@@ -1,0 +1,8 @@
+dataset: utkface
+
+_target_: src.datasets.utkface.UTKFaceDataModule
+batch_size: 128
+num_workers: 12
+valid_batch_size: 512
+
+# task_names: ["age", "gender", "race"]

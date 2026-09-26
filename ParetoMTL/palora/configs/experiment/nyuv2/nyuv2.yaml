@@ -1,0 +1,30 @@
+# @package _global_
+comment: nyu config
+defaults:
+- _self_
+- hydra_cfg
+- /data: nyuv2
+- method: palora
+- wandb: wandb
+- ray_sampler: annealing
+
+model:
+  type: segnet
+
+optimizer:
+  type: Adam
+  lr: 1E-4
+scheduler:
+  step: 100
+  gamma: 0.5
+training:
+  epochs: 200
+
+validate_every_n: 10
+seed: 0
+device: 0
+hydra:
+  searchpath:
+  - file://configs/general
+  run:
+    dir: ./logs/outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}

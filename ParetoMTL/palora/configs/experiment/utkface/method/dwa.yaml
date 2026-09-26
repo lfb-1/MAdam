@@ -1,0 +1,13 @@
+name: dwa
+# FIM (Fisher Information Matrix) preconditioning
+# fim_method: "none" (baseline), "madam" (full MAdam),
+#             "diag_madam" (diagonal MAdam, ablation)
+# To run with MAdam: ++method.fim_method=madam
+fim_method: none
+fim_ema_decay: 0.999
+fim_eps_damp: 1e-8
+fim_eps_num: 1e-12
+fim_clip_grad_norm: 0.0
+fim_bias_correction: false
+fim_stochastic_pairs: true
+exclude_bn_from_fim: null
